@@ -3,3 +3,28 @@
     padding: 25rem 0;//25rem padding for the top and bottom and 0 for left and right
     margin-top: -20vh;
 }
+
+.section-features{
+    padding: 20rem 0;//padding top and bottom 200px and 0 for left and right
+    //using this code to make the section have a background image with a linear gradient
+    //translucent overlay on top
+    background-image: linear-gradient(
+            to right bottom,
+            rgba($color-primary-light, 0.8),  
+            rgba($color-primary-dark, 0.8)
+        ) , 
+        url(../img/nat-4.jpg);
+    background-size: cover;
+    //skewing the feature box to achieve the non-rectangular effect
+    transform: skewY(-7deg);
+    //moving the section up to cover the space created by the skewed box design
+    margin-top: -10rem;
+
+    //selecting all the direct children of the section using the direct shild selector ">"
+    //and the * wildcard to select all of them
+    & > * {
+        //skewing each feature box in the opposite direction so as 
+        //to avoid inheriting the skew design from it's parent
+        transform: skewY(7deg);
+    }
+}

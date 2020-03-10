@@ -8,6 +8,7 @@
         position: absolute;
         z-index: 10;
         transition: all .2s;
+        //creates the distance between each image and its green outline
         outline-offset: 2rem;
 
         &--p1{
@@ -26,14 +27,18 @@
         }
 
         &:hover{
+            //creates the green outline
             outline: 1.5rem solid $color-primary;
+            //This is the grow and move up animation for the hovered image
             transform: scale(1.05) translateY(-.5rem);
             box-shadow: 0 2.5rem 4rem rgba($color-black, .5);
+            //moves the image to the front when hovered
             z-index: 20;
         }
     }
 
     &:hover &__photo:not(:hover) {
+        //shrink the non hovered images while one other is hovered
         transform: scale(0.9);
     }
 }
