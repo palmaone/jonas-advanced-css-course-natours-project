@@ -1,6 +1,6 @@
 
 .btn{
-
+    &,
     &:link,
     &:visited {
         text-transform: uppercase;
@@ -11,19 +11,21 @@
         transition: all .2s;
         position: relative;
         font-size: $default-font-size;
+
+        //Change for the <button> element
+        border: none;
+        cursor: pointer;
     }
 
-    &:hover {
+    &:hover{
         transform: translateY(-3px);
         /*
                     1  2    3    4
         box-shadow: 0 10px 20px rgba($color-black, 0.2);
-
         1.offset amount to the x axis
         2. offset amount to the y axis
         3. the blur that we want to see, 20px is a very high blur
         4. the color and opacity for the shadow
-
         */
         box-shadow: 0 10px 20px rgba($color-black, 0.2);
 
@@ -33,7 +35,9 @@
         }
     }
 
-    &:active {
+    &:active,
+    &:focus {
+        outline: none;
         transform: translateY(-1px);
         box-shadow: 0 5px 10px rgba($color-black, 0.2);
     }
@@ -47,7 +51,7 @@
         }
     }
 
-    &-green{
+    &--green{
         background-color: $color-primary;
         color: $color-white;   
     
