@@ -23,10 +23,6 @@
 
 */
 
-@mixin respond-phone {
-    @media (max-width: 600px) { @content };
-}
-
 /* Breakpoint argument choices:
     -phone
     -tab-protrait
@@ -35,18 +31,22 @@
 */
 @mixin respond($breakpoint) {
     @if $breakpoint == phone {
-        @media (max-width: 600px) { @content };
+        //600px / 16 = 37.5 em (1em = 16px)
+        @media (max-width: 37.5em) { @content };
     }
 
     @if $breakpoint == tab-portrait {
-        @media (max-width: 900px) { @content };
+        //900px / 16 = 56.25 em (1em = 16px)
+        @media (max-width: 56.25em) { @content };
     }
 
     @if $breakpoint == tab-landscape {
-        @media (max-width: 1200px) { @content };
+        //1200px / 16 = 75 em (1em = 16px)
+        @media (max-width: 75em) { @content };
     }
 
     @if $breakpoint == big-desktop {
-        @media (min-width: 1800px) { @content };
+        //1800px / 16 = 112.5 em (1em = 16px)
+        @media (min-width: 112.5em) { @content };
     }
 }
