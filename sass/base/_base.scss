@@ -31,7 +31,12 @@ html{
 }
 
 body {
-
     box-sizing: border-box;
     /*box-sizing: border-box; -> this changes the box model behavior so that the borders and the padding are no longer added to the total width or height that we specify for a box*/
+    /* padding: 30px; */
+    padding: 3rem;
+
+    @include respond(tab-portrait){
+        padding: 0;
+    }
 }

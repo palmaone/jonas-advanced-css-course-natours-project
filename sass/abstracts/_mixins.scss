@@ -28,7 +28,13 @@
     -tab-protrait
     -tab-landscape
     -big-desktop
+
+    ORDER: Start with the Base + typography > then move to general layout + grid > page layout > components
+
+    1em = 16px
 */
+
+
 @mixin respond($breakpoint) {
     @if $breakpoint == phone {
         //600px / 16 = 37.5 em (1em = 16px)
